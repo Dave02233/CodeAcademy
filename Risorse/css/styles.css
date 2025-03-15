@@ -1,0 +1,80 @@
+* {
+    font-family: Helvetica;
+}
+
+body, header {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    padding-bottom: 250px; /* Altezza del footer per evitare sovrapposizioni */
+}
+
+header{
+    background-image: url("../images/pattern.jpeg");
+    height: 120px;
+    width: 100%;
+    position: fixed;
+    top: 0px;    
+    z-index: 1;
+    border-bottom: 2px solid #009999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header #main-title {
+
+    font-size: 100px;
+    font-weight: bold;
+    color: khaki;
+    text-align: center;
+    overflow:visible;
+    white-space: nowrap;
+    min-width: 600px;
+}
+
+#articoli {
+    position: relative;
+    left: 2%; /* Aggiunto un piccolo spostamento a sinistra */
+    width: 97%;
+    top: 130px;
+}
+
+article h2 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    width: 97%;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: #009999;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    height: 50px; /* Specifica l'altezza del footer */
+}
+
+.background-green {
+    background-color: springgreen;
+}
+
+.background-lightcoral {
+    background-color: lightcoral;
+}
+
+.background-skyblue {
+    background-color: skyblue
+}
+
+.highlighted {
+    font-weight: bold;
+    color: blue;
+}
