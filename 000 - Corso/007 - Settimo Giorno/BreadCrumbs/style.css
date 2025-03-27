@@ -1,0 +1,26 @@
+.breadcrumb {
+    padding: 12px 2px;
+  }
+  
+  .breadcrumb li{
+    display: inline;
+  }
+  
+  .breadcrumb li.location+li.location::before {
+    content:"> ";
+  }
+  
+  .breadcrumb li.location+li.location::after {
+    content:" ... ";
+  }
+  
+  .breadcrumb li.attribute::after {
+    border: 1px solid black;
+    padding: 2px;
+    margin: 2px;
+    content: "x";
+  }
+  
+  .breadcrumb li a:hover {
+    color: #009999; 
+  }
