@@ -15,6 +15,7 @@ On your site, you’ll collect all the colors, fonts, and some of the repeating 
 
 <html>
     <head>
+        <meta http-equiv="refresh" content="15"/>
         <title>Website Design System</title>
         <link rel="stylesheet" href="./Risorse/styles.css">
 
@@ -55,6 +56,20 @@ On your site, you’ll collect all the colors, fonts, and some of the repeating 
             <span>Credits: Daniele Zucco</span></p>
             <a href="#">Ritorna all'inizio</a>
         </footer>
+        <h1>Variabile test:</h1>
+        <div class="Tag">Setpoint PID CP02 <span>:="PID"."CP02 Aria"."Setpoint":</span></div>
+        <div class="Tag">Merker Word 0 <span>:=%MW0:</span></div>
+        <!-- Form per scrivere variabili PLC -->
+        <h2>Scrivi variabili PLC</h2>
+        <form method="post" action="" class="Tag">
+            <!-- AWP_In_Variable Name='"PID"."CP02 Aria"."Setpoint"' -->
+            <label for="Setpoint">Setpoint PID</label>
+            <input id="Setpoint" name='"PID"."CP02 Aria"."Setpoint"' type="text">
+            <br>
+            <!-- AWP -->
+        </form>
+        <input id="Setpoint" name='"PID"."CP02 Aria"."Setpoint"'>
+        <script src="Risorse\index.js"></script>
     </body>
 
 </html>
