@@ -1,75 +1,93 @@
 <!DOCTYPE html>
-
-<!--Challenge Project: Build a Website Design System
-Overview
-This project is slightly different than others you have encountered thus far on Codecademy.
-Instead of a step-by-step tutorial, this project contains a series of open-ended requirements
-which describe the project you’ll be building. There are many possible ways to correctly fulfill 
-all of these requirements, and you should expect to use the internet, Codecademy, and other resources
-when you encounter a problem that you cannot easily solve.
-
-Project Goals
-In this project, you’ll be building your own basic design system for a website. 
-In essence, you’ll be building a website to help you build MORE websites in the future! 
-On your site, you’ll collect all the colors, fonts, and some of the repeating styles.-->
-
 <html>
     <head>
-        <meta http-equiv="refresh" content="15"/>
-        <title>Website Design System</title>
-        <link rel="stylesheet" href="./Risorse/styles.css">
-
-        <!--Fonts da Google Fonts API-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Boldonse&family=Playwrite+HU:wght@100..400&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <title>Document</title>
+        <link rel="stylesheet" href="./style.css">
     </head>
+<body>
 
-    <body>
-        <header>
-            <h1>GUIDA AL DESIGN DI UNA PAGINA WEB</h1>
-        </header>
-        <nav class="Briciole">
-            <ul>
-                <li>...</li>
-                <li><a href="./Font.html">Font</a></li>
-                <li><a href="./Text.html">Text Styles</a></li>
-            </ul>
-        </nav>
+    <nav class="main-nav">
+        <figure class="logo">
+            <img src="Risorse/Immagini/img-tea-cozy-logo.png"/>
+        </figure>
+        <ul class="Reference">
+            <li><a href="#">Mission</a></li>
+            <li><a href="#">Featured Tea</a></li>
+            <li><a href="#">Locations</a></li>
+        </ul>
+    </nav>
 
-        <section>
-            <h2 class="Titolino">Colori</h2>
-            <article class ="Box">
-                <section class="SezioneDiCose">
-                <div class="Colore" id="Coral" title="Non mi piace molto">Coral elegante<br>#FF6F61</div>
-                <div class="Colore" id="Blu" title="Non mi piace per niente">Blu brillante<br>#3A8DFF</div>
-                </section>
-                <section class="SezioneDiCose">
-                <div class="Colore" id="Grigio" title="Bel contrasto">Grigio scuro sofisticato<br>#4D4D4D</div>
-                <div class="Colore" id="Giallo" title ="Molto bello">Giallo dorato vivace<br>#FFCD02</div>
+    <section class="MainView">
+        <img src="Risorse/Immagini/img-mission-background.jpg"/>
+        <article class="MiddleText">
+            <h2>Our Mission</h2>
+            <h4>Handpicked, Artisanally Curated, Free Range, Sustainable, Small Batch, Fair Trade, Organic Tea</h4>
+        </article>
+    </section>
+
+    <section class="Container">
+        <section class="MonthlyTea">
+            <header>
+                <h2>Tea of the Month</h2>
+                <h4>What's steeping at The Tea Cozy</h4>
+            </header>
+            <section class="Images-Caption">
+                <figure>
+                    <img src="Risorse\Immagini\img-berryblitz.jpg">
+                    <figcaption>Fall Berry Blitz Tea</figcaption>
+                </figure>
+                <figure>
+                    <img src="Risorse\Immagini\img-spiced-rum.jpg">
+                    <figcaption>Spiced Rum Tea</figcaption>
+                </figure>
+                <figure>
+                    <img src="Risorse\Immagini\img-donut.jpg">
+                    <figcaption>Seasonal Donuts</figcaption>
+                </figure>
+                <figure>
+                    <img src="Risorse\Immagini\img-myrtle-ave.jpg">
+                    <figcaption>Myrtle Ave Tea</figcaption>
+                </figure>
+                <figure>
+                    <img src="Risorse\Immagini\img-bedford-bizarre.jpg">
+                    <figcaption>Breadford Bizzarre Tea</figcaption>
+                </figure>
+            </section>
+        </section>
+    </section>
+
+    <section class="Container">
+        <section class="SecondaryView">
+            <!--img src="Risorse/Immagini/img-locations-background.jpg"/-->
+            <article>
+                <header><h1>Locations</h1></header>
+                <section class="Locations">
+                    <article>
+                        <h3>Downtown</h3>
+                        <p>384 West 4th St<br>Suite 108<br>Portland,Maine</p>
+                    </article>
+                    <article>
+                        <h3>Downtown</h3>
+                        <p>384 West 4th St<br>Suite 108<br>Portland,Maine</p>
+                    </article>
+                    <article>
+                        <h3>Downtown</h3>
+                        <p>384 West 4th St<br>Suite 108<br>Portland,Maine</p>
+                    </article>
                 </section>
             </article>
         </section>
-
-        <footer>
-            <p>FOOTER MOLTO BELLO <br> 
-            <span>Credits: Daniele Zucco</span></p>
-            <a href="#">Ritorna all'inizio</a>
-        </footer>
-        <h1>Variabile test:</h1>
-        <div class="Tag">Setpoint PID CP02 <span>:="PID"."CP02 Aria"."Setpoint":</span></div>
-        <div class="Tag">Merker Word 0 <span>:=%MW0:</span></div>
-        <!-- Form per scrivere variabili PLC -->
-        <h2>Scrivi variabili PLC</h2>
-        <form method="post" action="" class="Tag">
-            <!-- AWP_In_Variable Name='"PID"."CP02 Aria"."Setpoint"' -->
-            <label for="Setpoint">Setpoint PID</label>
-            <input id="Setpoint" name='"PID"."CP02 Aria"."Setpoint"' type="text">
-            <br>
-            <!-- AWP -->
-        </form>
-        <input id="Setpoint" name='"PID"."CP02 Aria"."Setpoint"'>
-        <script src="Risorse\index.js"></script>
-    </body>
+    </section>
+    <footer>
+        <section class="MainFooter">
+            <h1>The Tea Cozy</h1>
+            <h5>contact@theteacozy.com</h5>
+            <h5>917-555-8904</h5>
+        </section>
+        <section class="SecondaryFooter">
+            <h5>copyrigth The Tea Cozy 2071</h5>
+        </section>
+    </footer>
+</body>
 
 </html>
