@@ -1,0 +1,244 @@
+html {
+    font-size: 16px;
+    min-width: 630px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    padding: 0;
+    margin: 0;
+    background-color: #009999;
+}
+
+.Main-Navigation {
+    display: inline-flex;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    margin: 0;
+    padding: 0;
+}
+
+.Main-Navigation ul{
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    margin-right: 2rem;
+}
+
+.Main-Navigation ul li{
+    margin: 0 1rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background-color: beige;
+    box-shadow: 0 0.1rem 0.2rem;
+    a {
+        color: #056969;
+        font-size: 1.3rem;
+    }
+}
+
+.Main-Navigation ul li:hover{
+    background-color: #056969;
+    transition: all 0.3s ease-in-out;
+    a {
+        color: gold;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+.Main-Navigation ul li:active{
+    background-color: beige;
+    position: relative;
+    top: 0.2rem;
+    box-shadow: none;
+    background-color: black;
+    transition: background-color 0.3s ease-in-out;
+    a {
+        color: white;
+        transition: color 0.3s ease-in-out;
+    }
+}
+
+.Main-Navigation h1 {
+    font-family: "Domine", "Bungee Tint", serif;
+    color: white;
+    font-size: 3rem;
+    text-shadow: 0.1rem 0.1rem 0.2rem black;
+    margin: 1rem 3rem;
+}
+
+.Main-Navigation h1:hover::after {
+    content: "???";
+    color: red;
+}
+
+a {
+    text-decoration: none;
+    font-style: 'Domine', sans-serif;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Business {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    text-align: center;
+
+    width: 100%;
+    min-height: 26rem;
+    
+    background-image: url(./Risorse/img/GeneralAutomation.jpg);
+    background-size: cover;
+    background-position: center;
+
+    border-bottom: 1px solid gold;
+    border-top: 1px solid gold;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0;
+
+        h2, p{
+            background-color: black;
+            opacity: 0.8;
+            width: 100%;
+            margin: 0;
+            padding: 0.8rem 0;
+        }
+    
+        h2 {
+            font-size: 2rem;
+            text-shadow: 0.05rem 0.05rem gold;
+            color: #0cc;
+        }
+    
+        p {
+            color: white;
+        }
+    }
+
+}
+
+
+.Technology {
+    display: grid;
+    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    justify-items: center;
+    text-align: center;
+
+    width: 100%;
+
+    border-bottom: 1px solid gold;
+    border-top: 1px solid gold;
+
+    div{
+        filter: blur(0.06rem);
+        transition: all 0.5s ease-in-out;
+    }
+
+    h2, p{
+        background-color: black;
+        opacity: 0.8;
+        width: 100%;
+        padding: 0.6rem;
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 2rem;
+        text-shadow: 0.05rem 0.05rem gold;
+        color: #0cc;
+    }
+
+    p {
+        color: white;
+    } 
+}
+
+.Technology:hover {
+    img{
+        filter: blur(0.5rem);
+        transition: all 0.5s ease-in-out;
+    }
+
+    div{
+        filter: blur(0);
+    }
+}
+
+.Technology img {
+    grid-area: 1 / 1 / 11 / 11;
+    width: 100%;
+    height: 100%;
+}
+
+.Technology div {
+    grid-area: 4 / 1 / 6 / 11;
+    z-index: 5;
+    justify-items: center;
+    overflow: hidden;
+    width: 100%;
+    background-color: black;
+    color: white;
+}
+
+footer {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    background-color: #056969;
+
+    h3 {
+        font-size: 1.5rem;
+        text-shadow: 0.05rem 0.05rem gold;
+        color: white;
+        margin-bottom: 0;
+    }
+
+    p {
+        padding: 0 2rem;
+        color: white;
+    }
+}
+
+
+
+
+
+@media only screen and (max-width: 1000px) {
+    .Main-Navigation ul{
+        flex-direction: column;
+        li {
+            margin: 0.2rem 0;
+        }
+    }
+    .Technology {
+        img{
+            width: 100%;
+            height: auto;
+        }
+        div {
+        grid-area: 2 / 1 / 4 / 11;
+        }
+    }
+}
