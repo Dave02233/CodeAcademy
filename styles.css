@@ -176,7 +176,7 @@ main {
 
 .Technology:hover {
     img{
-        filter: blur(0.5rem);
+        filter: blur(1rem);
         transition: all 0.5s ease-in-out;
     }
 
@@ -235,7 +235,8 @@ footer {
     .Technology {
         img{
             width: 100%;
-            height: auto;
+            height: 100%;
+            filter: blur(4rem);
         }
         div {
         grid-area: 2 / 1 / 4 / 11;
