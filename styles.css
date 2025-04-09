@@ -239,9 +239,9 @@ footer {
             filter: blur(2rem);
         }
 
-        div {
+        /*div {
         grid-area: 2 / 1 / 4 / 11;
-        }
+        }*/
     }
 
     .Technology:hover{
