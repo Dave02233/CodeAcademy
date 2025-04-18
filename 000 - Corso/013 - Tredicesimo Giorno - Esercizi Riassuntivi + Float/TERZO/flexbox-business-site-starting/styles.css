@@ -1,6 +1,6 @@
 html {
     font-size: 16px;
-    min-width: 630px;
+    /*min-width: 580px;*/
 }
 
 body {
@@ -78,10 +78,10 @@ header {
     margin: 1rem 3rem;
 }
 
-.Main-Navigation h1:hover::after {
+/*.Main-Navigation h1:hover::after {
     content: "???";
     color: red;
-}
+}*/
 
 a {
     text-decoration: none;
@@ -141,17 +141,19 @@ main {
 
 .Technology {
     display: grid;
-    grid-template: repeat(10, 1fr) / repeat(10, 1fr);
+    grid-template: repeat(5, 1fr) / repeat(3, 1fr);
     justify-items: center;
     text-align: center;
+    align-content: center;
 
     width: 100%;
+    max-height: 800px;
 
     border-bottom: 1px solid gold;
     border-top: 1px solid gold;
 
     div{
-        filter: blur(0.06rem);
+        filter: blur(1px);
         transition: all 0.5s ease-in-out;
     }
 
@@ -176,8 +178,7 @@ main {
 
 .Technology:hover {
     img{
-        filter: blur(1rem);
-        transition: all 0.5s ease-in-out;
+        filter: blur(7px);
     }
 
     div{
@@ -186,19 +187,22 @@ main {
 }
 
 .Technology img {
-    grid-area: 1 / 1 / 11 / 11;
+    grid-area: 1 / 1 / 7 / 4;
     width: 100%;
     height: 100%;
+    transition: all 0.5s ease-in-out;
 }
 
 .Technology div {
-    grid-area: 4 / 1 / 6 / 11;
+    grid-area: 3 / 1 / 3 / 4;
     z-index: 5;
     justify-items: center;
+    align-content: center;
     overflow: hidden;
     width: 100%;
     background-color: black;
     color: white;
+    transition: all 0.5s ease-in-out;
 }
 
 footer {
@@ -221,11 +225,19 @@ footer {
     }
 }
 
-
+a {
+    color: red;
+}
 
 
 
 @media only screen and (max-width: 1000px) {
+
+    html {
+        font-size: 20px;
+        /*min-width: 580px;*/
+    }
+
     .Main-Navigation ul{
         flex-direction: column;
         li {
@@ -233,13 +245,75 @@ footer {
         }
     }
     .Technology {
+        grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+
         img{
             width: 100%;
             height: 100%;
-            filter: blur(4rem);
+            filter: blur(6px);
+            grid-area: 1 / 1 / 4 / 4;
         }
         div {
-        grid-area: 2 / 1 / 4 / 11;
+            grid-area: 2 / 1 / 3 / 4;
+            filter: none;
+        }
+
+    }
+
+    .Technology:hover {
+        img{
+            filter: blur(6px);
+        }
+    }
+}
+
+@media only screen and (max-width: 840px) {
+    
+    .Main-Navigation{
+
+        h1 {
+            font-size: 2rem;
+            margin: 1rem 1rem;
+        }
+
+        ul{
+            margin-right: 1rem;
+        }
+
+    }
+}
+
+@media only screen and (max-width: 580px) {
+    .Business {
+        min-height: 52rem;
+    }
+}
+
+@media only screen and (max-width: 490px) {
+    .Main-Navigation {
+
+        display: normal;
+        position: fixed;
+        z-index: 10;
+        width: 100%;
+        height: 4rem;
+        padding: 1rem;
+        text-align: center;
+        background-color: rgba(0, 153, 153, 0.7);
+        border-bottom: 1px solid gold;
+
+
+        h1 {
+            word-wrap: break-word;
+            width: 100%;
+            font-size: 1.8rem;
+            justify-self: center;
+            align-self: center;
+        }
+        ul {
+            width: 0;
+            visibility: hidden;
+            padding: 0;
         }
     }
 }
