@@ -46,7 +46,7 @@ let spaceship = {
   
   const firstPassenger = spaceship.passengers[0];
   
-  console.log(firstPassenger)
+  console.log(firstPassenger, capFave)
   
   
   
