@@ -1,0 +1,33 @@
+git init
+
+//init means initialize. The command sets up all the tools Git needs to begin tracking changes made to the project.
+
+git status
+
+//Tracking Changes, In the output, notice the file in red under untracked files. 
+//Untracked means that Git sees the file but has not started tracking changes yet.
+
+git add -A
+
+//Add to staging area, In order for Git to start tracking scene-1.txt, the file needs to be added to the staging area.
+
+git diff
+
+//Check Differencies in tracked files
+
+git commit -a -m ""
+
+//Commit Changes from the staging area to the repository
+
+git log
+
+//Print the log of commits
+
+git checkout HEAD filename
+
+//Discard changes
+
+git reset
+
+//resets the file in the staging area to be the same as the HEAD commit. 
+//It does not discard file changes from the working directory, it just removes them from the staging area.
