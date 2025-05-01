@@ -217,6 +217,15 @@ footer {
         color: brown;
 
         text-align: center;
+
+        a:link{
+            color: rgb(150, 130, 17);
+        }
+
+        a:active{
+            color: black;
+            text-decoration: none;
+        }
     }
 }
 
