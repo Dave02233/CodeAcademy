@@ -1,0 +1,13 @@
+<!DOCTYPE html> 
+<html>
+ 
+  <head>
+    <link rel="stylesheet" href="style.css">
+		<!-- Add the async attribute to the script below: -->
+   <script id="blue" src="turnBlue.js" async></script> <!-- Async serve a caricare lo script in contemporanea alla parte HTML -->
+  </head>
+  
+  <body>		
+   	<p class="centered" id="logo">Codecademy</p>
+  </body>
+</html>
