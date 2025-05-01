@@ -220,6 +220,70 @@ footer {
     }
 }
 
+.MapHeadContainer{
+    display: inline-flex;
+    flex-direction: row;
+
+    width: 100%;
+
+
+
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: brown;
+
+    border-bottom: 3px solid gold;
+
+    button{
+        border: none;
+
+        text-align: center;
+        text-justify: center;
+
+        padding: 0;
+        margin: 0.5rem 0.5rem;
+
+        font-size: 1rem;
+        font-weight: 900;
+
+        height: 2rem;
+        width: 2rem;
+
+        background-color: beige;
+        color: brown;
+
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+
+        border-radius: 5px;
+
+    }
+    button:active{
+        background-color: rgb(218, 63, 63);
+        color: beige;
+        border: 1px solid beige;
+    }
+}
+
+section#mapSection{
+    font-size: 0;
+}
+
+#mappa{
+    overflow: hidden;
+    height: 0;
+    transition: all 0.5s ease-in-out;
+}
+
+#mappa.visible{
+    height: 25rem;
+}
+
+#mappa.hidden{
+    height: 0px;
+}
+
 main{
     background-color: beige;
 }
