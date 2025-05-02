@@ -1,0 +1,5 @@
+What it is:
+The DOM is a way for browsers to represent the structure of a webpage in a way that programming languages can understand and manipulate. 
+How it works:
+When a browser loads a webpage, it creates a DOM of the page, which is essentially a tree-like structure where each element, attribute, and text node is represented as an object. 
+Why it's important:
