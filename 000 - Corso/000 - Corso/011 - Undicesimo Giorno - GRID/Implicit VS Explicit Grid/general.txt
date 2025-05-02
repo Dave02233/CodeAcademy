@@ -1,0 +1,11 @@
+What happens if the developer has specified a 3-column, 5-row grid (for a total of 15 items), but the search results return 30?
+
+Something called the implicit grid takes over. The implicit grid is an 
+Preview: Docs Loading link description
+algorithm
+ built into the specification for CSS Grid that determines default behavior for the placement
+ of elements when there are more than fit into the grid specified by the CSS.
+
+The default behavior of the implicit grid is as follows: items fill up rows first,
+ adding new rows as necessary. New grid rows will only be tall enough to contain the content within them.
+  In the next exercise, you’ll learn how to change this default behavior.

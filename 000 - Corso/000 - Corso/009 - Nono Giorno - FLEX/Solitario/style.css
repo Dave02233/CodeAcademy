@@ -1,0 +1,158 @@
+*{
+    font-family: Helvetica, sans-serif;
+    /*font-size: 22px;*/
+    color: seashell;
+    /*opacity: 0.9;*/
+    text-align: center;
+    /*background-color: black;*/
+}
+
+body, .main-nav, .MiddleText {
+    background-color: black;
+}
+
+li, figcaption, h2, h3, h4, article{
+    font-size: 22px;
+    opacity: 0.9;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+}
+
+.main-nav{
+    height: 69px;
+    width: 100%;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px 0;
+    margin: 0;
+    border-bottom: 1px solid seashell;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+.Reference{
+    display: inline-flex;
+    list-style: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+
+.Reference li{
+    margin: 5px 10px;
+}
+
+.logo{
+    height: 100%;
+    margin: 0 10px;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.logo img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.MainView{
+    /*background-image:url("Risorse/Immagini/img-mission-background.jpg");*/
+    display: flex;
+    width: 100%;
+    height: 700px;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+
+}
+
+
+.MainView .MiddleText{
+    width: 100%;
+    position: absolute;
+    top:50%;
+}
+
+.Container{
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.MonthlyTea{
+    padding: 0;
+    margin: 100px 0;
+    width: 1200px;
+}
+
+.MonthlyTea header{
+    text-align: center;
+}
+
+.MonthlyTea .Images-Caption{
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Images-Caption figure img{
+    width: 300px;
+    height: 200px;
+}
+
+
+.SecondaryView{
+    background-image: url("Risorse/Immagini/img-locations-background.jpg");
+    background-size: cover;
+    width: 80%;
+    /*height: 500px;*/
+    padding-top: 30px;
+}
+
+
+.SecondaryView article,  
+.SecondaryView header, 
+.SecondaryView h1 {
+    background-color: transparent;
+}
+
+.SecondaryView header{
+    padding: 0;
+    margin: 0 auto 15px;
+}
+
+.Locations{
+    flex: 1 1 500px;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.Locations article{
+    height: 300px;
+    width: 300px;
+    margin: 20px;
+    background-color: black;
+    text-wrap: wrap;
+    overflow: hidden;
+    line-height: 2.3;
+}
+
+.MainFooter{
+    align-content: center;
+}
+
+.SecondaryFooter{
+    margin-left: 20px;
+    display: flex;
+    justify-content: flex-start;
+}
