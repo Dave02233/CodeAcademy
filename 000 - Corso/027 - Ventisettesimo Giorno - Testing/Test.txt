@@ -1,0 +1,18 @@
+Some software testing methodologies prioritize writing test cases before writing the code those test cases will validate. Those types include:
+
+Test-driven Development (TDD) = Funzioni, classi, primo approccio ai test, può essere scritto prima dello sviluppo
+Behavior-driven Development (BDD) = Feature, simile a TDD, ma più specifico
+Specification by Example (SBE)
+Acceptance Test-driven Development (ATDD)
+
+MOCHA
+Mocha è un framework di test JavaScript ampiamente utilizzato per eseguire test automatici su codice Node.js e browser. 
+Permette di scrivere test strutturati in modo semplice, supportando sia test sincroni che asincroni. 
+Mocha offre funzionalità come il supporto a vari stili di asserzione (tramite librerie come Chai), 
+la possibilità di organizzare i test in suite e casi, e report dettagliati sull’esito dei test. 
+È spesso usato insieme a strumenti di copertura del codice e mocking per garantire la qualità del software.
+####INSTALLAZIONE####
+npm init
+npm install mocha -D
+#####################
+Per eseguire un test inserire nello script presente in package.json test: mocha + directory test .js

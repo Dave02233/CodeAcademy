@@ -1,0 +1,14 @@
+{
+  "name": "027---ventisettesimo-giorno---testing",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha ./Mocha-test.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "mocha": "^11.3.0"
+  }
+}
