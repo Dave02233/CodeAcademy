@@ -1,0 +1,61 @@
+SINGLE PAGE APPLICATIONS
+
+    Una pagina web mostra informazioni, una web app permette di lavorare e interagire con i dati come in un vero programma.
+
+    Per facilitare questo complesso flusso di dati, le applicazioni web sono solitamente progettate con diversi livelli.
+    Il paradigma di progettazione più comune è un design a tre livelli costituito da un livello di presentazione (browser web), livello applicativo (server)
+    e livello di archiviazione (database). In questo sistema, il livello di presentazione è responsabile dell'invio dei dati dell'utente al livello applicativo,
+    che può elaborare tali dati e fare qualsiasi cosa, incluso passarli al livello di archiviazione per la “conservazione sicura”.
+
+    Spesso, le applicazioni web possono diventare molto complesse. In questi casi, un design a tre livelli può non essere sufficiente.
+    Questo può rendere necessaria l'introduzione di livelli aggiuntivi per gestire tale complessità.
+    Ad esempio, l'introduzione di un livello di integrazione tra il livello applicativo e quello di archiviazione può aiutare a fornire 
+    un'interfaccia uniforme per l'accesso ai dati,
+    consentendo al livello applicativo di essere isolato dai cambiamenti che avvengono nell'implementazione del livello di archiviazione.
+
+    ES. Wikipedia
+    Il termine single-page application (SPA) si riferisce generalmente ad un'applicazione composta da una sola pagina che viene costantemente aggiornata.
+    Le richieste al server sono ora più rapide poiché contengono solo i dati necessari per aggiornare la vista. Le SPA sono applicazioni complete,
+    che funzionano nel browser ma restano comunque collegate a un server per aggiornare i dati dell'applicazione.
+    https://youtu.be/4yD85KiexTM
+    Il file rimane costante mentre la logica del JavaScript lato client modifica solo ciò che serve per aggiornare la vista.
+    Le richieste di dati sono molto più veloci rispetto ai file che devono essere processati su un server e poi renderizzati nel browser.
+    Le SPA puntano sulla velocità nell'interazione con l'utente e nei tempi di rendering del browser.
+
+    Strumenti:
+        Per creare una SPA puoi usare JavaScript puro per controllare tutta la logica necessaria.
+        In pratica, la complessità delle SPA cresce rapidamente quindi usare solo JavaScript non è consigliato.
+        - React è una popolare libreria JavaScript per costruire single-page applications.
+            Si concentra sulla creazione di componenti che possono renderizzarsi in modo diverso in base allo stato attuale dell'applicazione e ai dati dell'utente.
+        - Vue.js è un framework che utilizza il templating all'interno di un singolo file HTML mentre la logica dell'applicazione controlla cosa viene renderizzato.
+            Questo approccio è considerato più tradizionale e quindi più facile da imparare.
+        - Altre librerie e framework includono AngularJS, Ember.js, ExtJS, Knockout.js e Meteor.js.
+            Anche se tutti questi condividono obiettivi simili, ciascuno adotta approcci diversi per costruire SPA.
+
+    Pro:
+        - Le SPA sono veloci. Il principale punto di forza di una SPA è che sembra un'applicazione desktop o mobile.
+        Eliminando le richieste di nuovi file e affidandosi solo a piccole quantità di dati dal server,
+        le SPA offrono un'interfaccia in tempo reale con i loro utenti.
+        - Il riutilizzo del codice è un grande vantaggio quando si usano le SPA perché fa risparmiare tempo all'interno di un progetto e tra più progetti.
+        Molte librerie e framework SPA consigliano che i componenti siano abbastanza generali da poter essere riutilizzati da progetto a progetto.
+        - Le SPA offrono un percorso più semplice per migrare il codice verso un'applicazione mobile. Con una SPA, il back-end dell'applicazione
+        fornisce dati all'interfaccia front-end disaccoppiata. Questa separazione dei compiti permette la creazione di una UI mobile
+        mantenendo la logica di back-end dell'applicazione.
+
+    Contro:
+        - Le SPA richiedono più file da eseguire all'avvio, quindi il tempo di caricamento dell'applicazione può essere più lungo.
+        Questo è qualcosa da considerare se un utente non vorrà visitare un sito che impiega troppo tempo a caricarsi.
+        Il tempo di caricamento di una SPA può essere minimizzato caricando strategicamente le risorse durante l'esecuzione dell'applicazione.
+        - L'ottimizzazione per i motori di ricerca (SEO) presenta alcune difficoltà con le SPA. I motori di ricerca, come Google o DuckDuckGo,
+        indicizzano le pagine di un sito web per classificarne i contenuti. Questo può essere difficile con una sola pagina che potrebbe non avere contenuti
+        finché non vengono caricati da JavaScript. La SEO è un mondo in continua evoluzione, quindi esistono già strategie per mitigare questi svantaggi.
+        - Le SPA potrebbero non funzionare come previsto all'interno del browser. Ad esempio, il pulsante "indietro" o la cronologia di navigazione
+        possono comportarsi diversamente durante l'utilizzo di una single-page application. Questo può essere frustrante per gli utenti che si aspettano
+        una certa funzionalità all'interno dei loro browser.
+
+    Conclusioni:
+        Le single-page application offrono una migliore esperienza utente mentre vengono eseguite all'interno di un browser web.
+        Sono la scelta giusta per applicazioni che devono fornire interazione in tempo reale o complessa con i loro utenti.
+        Creare una SPA richiede più di una manciata di file HTML, CSS e JavaScript, ma la loro complessità continua a
+        essere ridotta da framework come React e Vue.js. Anche se la tua prossima applicazione non sarà una SPA, sapere come implementarle
+        è una competenza fondamentale per uno sviluppatore front-end.
