@@ -1,0 +1,4 @@
+npm install -g npm@latest
+npm create vite@latest
+npm run
+https://create-react-app.dev/docs/getting-started
