@@ -6,12 +6,11 @@ const container = document.getElementById('app');
 const root = createRoot(container);
 
 const title = '';
-const background = <img class='background' alt='ocean' src='/images/ocean.jpg'/>;
+const background = <img className='background' alt='ocean' src='/images/ocean.jpg'/>;
 
 const showBackground = true;
 
 function displayFact(e) {
-  const background = <img className='background' alt='ocean' src='/images/ocean.jpg'/>;const background = <img class='background' alt='ocean' src='/images/ocean.jpg'/>;
   const target = animals[e.target.alt].facts
   const funFact = target[Math.floor(Math.random() * target.length)];
   document.getElementById('fact').innerHTML = funFact;
