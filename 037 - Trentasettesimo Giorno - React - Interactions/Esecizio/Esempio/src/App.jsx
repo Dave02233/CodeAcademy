@@ -1,14 +1,25 @@
-import React from "react";
+import React, { useState } from "react";
+import List from "./List";
+import Button from "./Button";
 
-function App({ items = ['default 1', 'default 2'] }) {
+function App() {
+  const [displayList, setDisplayList] = useState(false);
+
+  function handleClick() {
+    setDisplayList((value) => !value);
+    console.log(displayList);
+  }
+
   return(
     <div>
-      <h1>TITLE</h1>
-      <ul>
-        {items.map(item => {
-          return <li key={item + '_key'}>{item}</li>
-        })}
-      </ul>
+      <Button onClick={handleClick}>
+        Mostra/Nascondi Lista
+      </Button>
+      {displayList
+      ? <List>
+          Titolo della lista
+        </List>
+      : null}
     </div>
   )
 }

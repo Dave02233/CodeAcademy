@@ -5,6 +5,6 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <App items={['item numero 1', 'item numero 2', 'item numero 3']} />
+    <App />
   </StrictMode>,
 )
