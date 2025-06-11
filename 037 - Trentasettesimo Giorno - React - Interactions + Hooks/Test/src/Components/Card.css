@@ -1,0 +1,26 @@
+.card-container {
+    margin: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+
+    width: fit-content;
+    padding: 1rem;
+
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid #225f9f;
+    border-radius: 20px;
+
+    #toggleVisibility {
+        border-radius: 5px;
+        border: 1px solid antiquewhite;
+        margin: 0.5rem;
+        transition: background-color 0.3s ease-in-out;
+    }
+
+    #toggleVisibility:hover {
+        background-color: #237edf;
+        color: antiquewhite;
+    }
+}
