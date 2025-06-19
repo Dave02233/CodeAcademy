@@ -1,0 +1,7 @@
+I componenti e i container sono due concetti fondamentali nell'architettura delle applicazioni React.
+
+- I **componenti** (presentational components) si occupano principalmente della presentazione: ricevono dati tramite le props e si limitano a renderizzare l'interfaccia utente. Non gestiscono direttamente la logica di business o lo stato complesso.
+
+- I **container** (container components) invece gestiscono la logica dell'applicazione, come il recupero dei dati, la gestione dello stato e il collegamento con le API. Passano poi i dati necessari ai componenti di presentazione tramite le props.
+
+Questa separazione permette di avere codice più riutilizzabile, testabile e organizzato. I container si occupano del "come" ottenere e gestire i dati, mentre i componenti si occupano del "cosa" mostrare all'utente.
