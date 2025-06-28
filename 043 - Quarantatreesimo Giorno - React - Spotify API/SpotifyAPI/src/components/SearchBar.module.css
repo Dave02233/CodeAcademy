@@ -1,3 +1,10 @@
+div{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
 form {
     width: 100%;
     
@@ -7,65 +14,62 @@ form {
 
     background-color: #181717;
 
-    padding: 0.7rem;
+    padding: 0rem;
 }
 
 .searchContainer {
-    width: 33%;
-    height: 22%;
+    width: 100%;
+    margin: 0.7rem;
+    max-width: 500px;
+    box-sizing: border-box;
     display: flex;
     justify-content: space-around;
     align-items: center;
-
     padding: 0.4rem;
     border-radius: 18px;
     background-color: #333232;
-
     overflow: hidden;
+}
 
-    input {
-        height: 1.8rem;
-        width: 80%;
+.searchContainer input {
+    height: 2.4rem;
+    width: 80%;
+    box-sizing: border-box;
+    padding: 0.3rem;
+    font-size: 1.3rem;
+    text-align: center;
+    border-radius: 16px;
+    background-color: #181717;
+    color: aliceblue;
+}
 
-        padding: 0.3rem;
+.searchContainer button {
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    display: flex;
+    background-color: #ffffff00;
+    padding: 0.3rem;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 16px;
+    cursor: pointer;
+}
 
-        font-size: 1.3rem;
-        text-align: center;
+.searchContainer button img {
+    background-color: #ffffff00;
+}
 
-        border-radius: 16px;
-        background-color: #181717;
-        color: aliceblue;
-    }
+.searchContainer button:hover {
+    border-top-color: rgb(134, 131, 126);
+    border-left-color: rgb(134, 131, 126);
+    border-bottom-color: #131212;
+    border-right-color: #131212;
+}
 
-    button {
-        box-sizing: border-box;
-        border: 2px solid transparent; /* Border sempre presente per evitare movimento */
-        display: flex;
-        background-color: #ffffff00;
-        padding: 0.3rem;
-        margin: 0;
-        justify-content: center;
-        align-items: center;
-
-        border-radius: 16px;
-        cursor: pointer;
-
-        img {
-            background-color: #ffffff00;
-        }
-    }
-
-    button:hover {
-        border-top-color: rgb(134, 131, 126);
-        border-left-color: rgb(134, 131, 126);
-        border-bottom-color: #131212;
-        border-right-color: #131212;
-    }
-
-    button:active {
-        border-top-color: #131212;
-        border-left-color: #131212;
-        border-bottom-color: rgb(134, 131, 126);
-        border-right-color: rgb(134, 131, 126);
-    }
+.searchContainer button:active {
+    border-top-color: #131212;
+    border-left-color: #131212;
+    border-bottom-color: rgb(134, 131, 126);
+    border-right-color: rgb(134, 131, 126);
 }
