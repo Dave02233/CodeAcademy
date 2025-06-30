@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import style from './SearchBar.module.css';
 import { getToken, getAccessToken, getStoredAccessToken } from '../Spotify/getToken';
-import { searchSpotify } from '../Spotify/getInfo';
+import { searchSpotify } from '../Spotify/getSearch';
 import SearchBarResults from './SearchBarResults';
 
 function SearchBar () {

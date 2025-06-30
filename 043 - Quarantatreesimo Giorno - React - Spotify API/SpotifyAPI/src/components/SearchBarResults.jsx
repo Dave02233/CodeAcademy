@@ -20,8 +20,9 @@ function SearchBarResults(props) {
                                 <a href={track.external_urls.spotify} target="_blank" className={style.linkStyle}>
                                 <p>{track.name} - {track.artists.map(a => a.name).join(', ')}</p>
                             </a>
-                        </li>
+                        </li>          
                     ))}
+                   
                 </ul>
             ) : (
                 <p>Nessun risultato</p>
