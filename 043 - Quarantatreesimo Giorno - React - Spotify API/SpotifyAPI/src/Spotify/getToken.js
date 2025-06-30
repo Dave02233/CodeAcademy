@@ -19,7 +19,7 @@ export function getStoredAccessToken() {
 
 export async function getToken() {
   const state = generateRandomString(16);
-  const scope = 'user-read-private user-read-email';
+  const scope = 'user-read-private user-read-email user-library-read user-library-modify user-top-read user-read-playback-state user-modify-playback-state playlist-read-private playlist-modify-public playlist-modify-private';
 
   const params = new URLSearchParams({
     response_type: 'code',

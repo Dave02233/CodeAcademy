@@ -14,12 +14,13 @@ function SearchBarResults(props) {
                 <ul className={style.displayTracks}>
                     {tracks.map(track => (
                         <li key={track.id} className={style.trackItem}>         
-                            {track.album.images[0] && (
-                                <img src={track.album.images[0].url} alt='songImage'/>
-                            )}
+                            {track.album.images[0] 
+                            ? <img src={track.album.images[0].url} alt='songImage'/>
+                            : null
+                            }
                                 <a href={track.external_urls.spotify} target="_blank" className={style.linkStyle}>
-                                <p>{track.name} - {track.artists.map(a => a.name).join(', ')}</p>
-                            </a>
+                                    <p>{track.name} - {track.artists.map(a => a.name).join(', ')}</p>
+                                </a>
                         </li>          
                     ))}
                    

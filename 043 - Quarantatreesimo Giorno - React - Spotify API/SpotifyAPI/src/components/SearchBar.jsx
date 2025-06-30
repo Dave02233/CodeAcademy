@@ -4,8 +4,9 @@ import { getToken, getAccessToken, getStoredAccessToken } from '../Spotify/getTo
 import { searchSpotify } from '../Spotify/getSearch';
 import SearchBarResults from './SearchBarResults';
 
-function SearchBar () {
+function SearchBar ({ onSearch, savedResults }) {
     const [searchName, setSearchName] = useState('');
+    const [showResults, setShowResults] = useState(false);
     const [tokenRequested, setTokenRequested] = useState(false);
     const [results, setResults] = useState([]);
 
@@ -27,16 +28,26 @@ function SearchBar () {
 
     
     const searchRequest = async (searchName) => {
-        setResults(await searchSpotify(searchName));
+        const results = await searchSpotify(searchName);
+        setResults(results);
     }
 
     const handleChange = ({target}) => {
         setSearchName(target.value);
+        handleShowResults(true);
         target.value.length > 0 ? searchRequest(target.value) : null;
     }
 
     const handleButtonlick = () => {
+        if (searchName.length === 0) return;
         searchRequest(searchName);
+        onSearch();
+        savedResults(results);
+        handleShowResults(false);
+    }
+
+    const handleShowResults = (value) => {
+        setShowResults(value);
     }
 
     return (
@@ -50,7 +61,7 @@ function SearchBar () {
                 </div>
             </form>
 
-            {searchName ? <SearchBarResults results={results}/> : null}
+            {showResults && searchName.length > 0 ? <SearchBarResults results={results}/> : null}
 
         </>
     )
