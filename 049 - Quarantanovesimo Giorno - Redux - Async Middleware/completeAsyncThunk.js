@@ -21,12 +21,13 @@ const sliceOptions = {
     hasError: false,
   },
   reducers: {},
-  extraReducers: {
-    [loadRecipes.pending]: (state, action) => {
+  extraReducers: (builder) => {
+    builder
+    .useCase('loadRecipes/pending', (state, action) => {
       // fill out function body
       state.isLoading = true;
       state.hasError = false;
-    },
+    }),
     [loadRecipes.fulfilled]: (state, action) => {
       // fill out function body
       state.isLoading = false;
