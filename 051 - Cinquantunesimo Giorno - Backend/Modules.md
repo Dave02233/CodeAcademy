@@ -195,3 +195,66 @@ os.networkInterfaces()	Info sulle interfacce di rete
 os.homedir()	Home directory dell’utente
 os.hostname()	Nome host del sistema
 os.uptime()	Uptime del sistema (sec)
+
+# Il modulo `util` di Node.js
+
+Il modulo `util` è un modulo integrato di Node.js che offre una serie di **funzioni di utilità** per semplificare attività comuni nello sviluppo, soprattutto per l'ispezione di oggetti, il supporto alla formattazione, la gestione delle callback, e altre funzionalità di basso livello.
+
+## A cosa serve?
+
+Principalmente, il modulo `util` è pensato per:
+
+- **Introspezione** delle variabili e degli oggetti (ad esempio con la funzione `util.inspect()` che restituisce una rappresentazione stringa dettagliata di un oggetto).
+- Supportare la scrittura di codice leggibile e mantenibile con funzioni di formattazione simili a `printf` (`util.format()`).
+- Facilitare la manipolazione delle callback e la loro trasformazione in funzioni basate su Promise (`util.promisify()`).
+- Supporto alla gestione di `inherits` (ereditarietà tra classi o funzioni costruttore).
+
+## Esempi pratici
+
+### 1. `util.inspect()`
+
+Permette di stampare a video un oggetto in modo dettagliato, molto utile nel debug.
+
+const util = require('util');
+
+const obj = {
+nome: "Mario",
+eta: 30,
+dettagli: { luogo: 'Milano', hobby: ['calcio', 'lettura'] }
+};
+
+console.log(util.inspect(obj, { colors: true, depth: null }));
+
+text
+
+### 2. `util.format()`
+
+Simile a `printf` in C, formatta una stringa con placeholder.
+
+const util = require('util');
+
+const name = 'Anna';
+const age = 25;
+
+const output = util.format('Ciao %s, hai %d anni.', name, age);
+console.log(output);
+// Output: "Ciao Anna, hai 25 anni."
+
+
+### 3. `util.promisify()`
+
+Converte una funzione che usa callback (stile error-first) in una che ritorna una Promise.
+
+const util = require('util');
+const fs = require('fs');
+
+const readFileAsync = util.promisify(fs.readFile);
+
+readFileAsync('./file.txt', 'utf8')
+.then(content => console.log(content))
+.catch(err => console.error(err));
+
+
+## Conclusioni
+
+Il modulo `util` è una **piccola cassetta degli attrezzi** per sviluppatori Node.js, ideale sia per il debug che per la scrittura di codice più elegante e modulare. Anche se alcune funzioni sono più "internazionali" (usate dal core di Node.js stesso), rappresenta comunque uno strumento molto utile per semplificare tante attività comuni.
