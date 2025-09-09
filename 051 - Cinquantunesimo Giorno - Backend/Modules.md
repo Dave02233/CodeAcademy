@@ -85,9 +85,6 @@ Questo metodo restituisce informazioni sul consumo di memoria del processo corre
 
 Esempio di output:
 
-js
-Copia
-Modifica
 {
   rss: 26247168,
   heapTotal: 5767168,
@@ -158,9 +155,7 @@ os.hostname() → restituisce il nome host del sistema operativo.
 os.uptime() → restituisce il tempo di attività del sistema (in secondi).
 
 Esempio pratico
-js
-Copia
-Modifica
+
 const os = require('os');
 
 const local = {  
@@ -172,9 +167,7 @@ const local = {
 console.log(local);
 Esempio di output:
 
-js
-Copia
-Modifica
+
 {
   'Home Directory': '/Users/luca',
   'Operating System': 'Darwin',
@@ -225,7 +218,6 @@ dettagli: { luogo: 'Milano', hobby: ['calcio', 'lettura'] }
 
 console.log(util.inspect(obj, { colors: true, depth: null }));
 
-text
 
 ### 2. `util.format()`
 
