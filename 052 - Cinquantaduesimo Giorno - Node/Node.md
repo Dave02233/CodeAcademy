@@ -242,3 +242,53 @@ console.error(err);
 ---
 
 Il modulo `fs` è indispensabile per lavorare con file e cartelle sul server, perfetto per leggere configurazioni, salvare dati, servire file statici, e altro ancora.
+
+
+# Readable Streams
+
+In un esercizio precedente, abbiamo praticato la lettura del contenuto di interi file nei nostri programmi JavaScript. In scenari più realistici, i dati non vengono elaborati tutti insieme ma piuttosto sequenzialmente, pezzo per pezzo, in quello che è noto come *stream*.  
+Il flusso di dati (*streaming*) è spesso preferibile perché non è necessario avere abbastanza RAM per processare tutti i dati contemporaneamente né avere tutti i dati a disposizione per iniziare l'elaborazione.
+
+Uno degli usi più semplici degli stream è leggere e scrivere file riga per riga. Per leggere file riga per riga, possiamo usare il metodo `.createInterface()` del modulo core `readline`.  
+Il metodo `.createInterface()` restituisce un `EventEmitter` configurato per emettere eventi `'line'`:
+
+const readline = require('readline');
+const fs = require('fs');
+
+const myInterface = readline.createInterface({
+input: fs.createReadStream('text.txt')
+});
+
+myInterface.on('line', (fileLine) => {
+console.log(The line read: ${fileLine});
+});
+
+text
+
+Passiamo in rassegna il codice sopra:  
+- Richiediamo i moduli core `readline` e `fs`.  
+- Assegnamo a `myInterface` il valore restituito dall’invocazione di `readline.createInterface()` passando un oggetto con la proprietà `input`.  
+- Impostiamo l’`input` su `fs.createReadStream('text.txt')` che crea uno stream dal file `text.txt`.  
+- Assegniamo un callback listener per eseguire ogni volta che vengono emessi eventi `'line'`. Un evento `'line'` sarà emesso dopo la lettura di ogni riga del file.  
+- Il callback listener stamperà sulla console la stringa `'The line read: [fileLine]'`, dove `[fileLine]` è la riga appena letta.
+
+# Il Modulo Timers
+
+Ci sono momenti in cui vogliamo che una parte del nostro codice venga eseguita in un momento specifico. A questo serve il [modulo timers](https://nodejs.org/api/timers.html#timers_class_immediate).  
+Come per il modulo Buffer, non è necessario importarlo con `require()` perché i metodi del modulo timers sono globali.
+
+Potresti già conoscere alcune funzioni timer come `setTimeout()` e `setInterval()`.  
+Le funzioni timer in [Node.js](https://www.codecademy.com/resources/docs/general/node-js) si comportano in modo simile a come operano nei programmi JavaScript di [frontend](https://www.codecademy.com/resources/docs/general/front-end), ma la differenza è che sono aggiunte al *event loop* di Node.js.  
+Ciò significa che le funzioni timer sono programmate e messe in una coda. Questa coda viene processata ad ogni iterazione del ciclo di eventi (*event loop*).  
+Se una funzione timer viene eseguita fuori da un modulo, il comportamento sarà casuale (non deterministico).
+
+La funzione `setImmediate()` è spesso confrontata con `setTimeout()`.  
+Quando viene chiamata `setImmediate()`, esegue la funzione di callback specificata **dopo** il completamento della fase corrente del [poll phase](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/#setimmediate-vs-settimeout).  
+Il metodo accetta due parametri: la funzione di callback (obbligatoria) e gli argomenti per la funzione di callback (opzionali).  
+Se si istanziano più chiamate a `setImmediate()`, queste saranno messe in coda ed eseguite nell'ordine in cui sono state create.
+
+setImmediate(() => {
+console.log('Hello! My name is Codey.');
+});
+
+Se usi setImmediate() all'interno della callback di fs.readFile(), la funzione passata a setImmediate() verrà eseguita dopo che la callback di readFile è stata invocata e completata
