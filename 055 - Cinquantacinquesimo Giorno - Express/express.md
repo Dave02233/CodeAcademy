@@ -12,4 +12,10 @@ Express è un framework web minimalista e flessibile per Node.js che semplifica 
 - **Gestione degli errori**: Meccanismi integrati per la gestione centralizzata degli errori.
 - **Estendibilità**: Ampio ecosistema di plugin e middleware di terze parti per aggiungere funzionalità avanzate (autenticazione, sessioni, CORS, ecc.).
 
+### Tips:
+- Require express e creazione server deve essere diviso dal listen port
+
 Express è ampiamente utilizzato per la sua semplicità, modularità e la vasta comunità di supporto.
+
+## Cos'è un backend framework?
+Un backend framework è un insieme di strumenti, librerie e convenzioni che facilita lo sviluppo del lato server di un'applicazione web. Fornisce strutture predefinite per gestire richieste HTTP, routing, accesso ai database, autenticazione, gestione delle sessioni e altre funzionalità comuni, permettendo agli sviluppatori di concentrarsi sulla logica dell'applicazione senza dover scrivere tutto da zero. I backend framework aiutano a scrivere codice più organizzato, sicuro e manutenibile.
