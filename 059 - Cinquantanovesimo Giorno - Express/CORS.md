@@ -3,7 +3,7 @@
 ## Cos’è il CORS?
 **CORS** (Cross-Origin Resource Sharing) è uno standard di sicurezza dei browser che regola le richieste tra domini diversi.  
 Quando una pagina web prova a caricare risorse (immagini, font, script, API) da un server diverso da quello da cui è stata scaricata, entra in gioco il CORS.
-
+s
 ---
 
 ## Perché serve?
