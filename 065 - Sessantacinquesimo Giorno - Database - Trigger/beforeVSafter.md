@@ -19,6 +19,28 @@ I trigger possono essere di due tipi:
 
 Nota: il comportamento `BEFORE`/`AFTER` si applica sia a trigger row-level che statement-level.
 
+## NEW e OLD nei trigger row-level
+
+Nei trigger row-level PostgreSQL espone due variabili speciali che rappresentano i valori delle righe coinvolte:
+
+- `NEW`: rappresenta la nuova riga che verrà inserita o aggiornata. È disponibile nei trigger `INSERT` e `UPDATE`.
+- `OLD`: rappresenta la riga prima della modifica o cancellazione. È disponibile nei trigger `UPDATE` e `DELETE`.
+
+Regole pratiche:
+- Le variabili `NEW` e `OLD` sono disponibili **solo** nei trigger dichiarati `FOR EACH ROW`. Nei trigger `FOR EACH STATEMENT` non sono presenti.
+- In un trigger `BEFORE` puoi modificare `NEW` per cambiare i valori che saranno scritti (es. normalizzare testo, calcolare campi derivati). Se un `BEFORE INSERT` o `BEFORE UPDATE` restituisce `NULL`, l'operazione sulla singola riga viene annullata.
+- In un trigger `BEFORE DELETE` puoi esaminare `OLD` e, se necessario, impedire la cancellazione sollevando un'eccezione o restituendo `OLD`.
+- In un trigger `AFTER` i valori sono già stati scritti: modificare `NEW` non ha effetto sulla riga già salvata. Il valore di ritorno di un trigger `AFTER` row-level è generalmente ignorato.
+
+Disponibilità per tipo di operazione:
+- `INSERT`: `NEW` è presente; `OLD` non è presente.
+- `UPDATE`: `OLD` e `NEW` sono presenti.
+- `DELETE`: `OLD` è presente; `NEW` non è presente.
+
+Esempio pratico:
+- In un `BEFORE UPDATE` puoi fare `NEW.updated_at := now(); RETURN NEW;` per impostare la timestamp di aggiornamento.
+- In un `AFTER INSERT` non puoi modificare direttamente la riga appena inserita tramite `NEW`, ma puoi registrare un audit log o lanciare attività esterne.
+
 ## Differenze pratiche e implicazioni
 
 - Controllo dei valori: `BEFORE` consente di modificare `NEW` (per INSERT/UPDATE) o anche di impedire l'operazione. `AFTER` non può cambiare i valori della riga che è stata salvata.
