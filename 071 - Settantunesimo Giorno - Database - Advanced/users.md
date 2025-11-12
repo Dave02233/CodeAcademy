@@ -124,8 +124,6 @@ Per usare uno schema, un ruolo deve avere il permesso `USAGE`. Senza `USAGE`, no
 
 Altri permessi a livello di schema includono:
 
-- `CREATE`: consente di creare nuove tabelle nello schema
-- `DROP`: consente di eliminare tabelle nello schema
 
 ## 📊 Permessi sulle Tabelle
 
@@ -161,4 +159,39 @@ Ad esempio, per revocare il permesso di `UPDATE`:
 REVOKE UPDATE ON finance.revenue FROM analyst;
 ```
 
----
+
+# 👥 Gruppi e Ereditarietà dei Ruoli in PostgreSQL
+
+## 👥 Gruppi (Ruoli come Gruppi)
+
+In PostgreSQL, i ruoli possono essere usati come "gruppi" per gestire permessi condivisi tra più utenti. Un gruppo è semplicemente un ruolo senza permesso di LOGIN, a cui altri utenti possono essere aggiunti come membri.
+
+### Creare un gruppo:
+
+```sql
+CREATE ROLE nome_gruppo;
+```
+
+### Aggiungere un utente a un gruppo:
+
+```sql
+GRANT nome_gruppo TO nome_utente;
+```
+
+Gli utenti membri del gruppo ereditano i permessi assegnati al gruppo.
+
+## 🧬 Ereditarietà dei Permessi
+
+Per default, i permessi di un gruppo vengono ereditati dai suoi membri. Questo comportamento può essere modificato con l'attributo `INHERIT` o `NOINHERIT`.
+
+- `INHERIT`: il ruolo eredita automaticamente i permessi dei gruppi di cui è membro (default)
+- `NOINHERIT`: il ruolo NON eredita automaticamente i permessi dei gruppi
+
+### Modificare l'ereditarietà:
+
+```sql
+ALTER ROLE nome_utente INHERIT;
+ALTER ROLE nome_utente NOINHERIT;
+```
+
+> Usare i gruppi e l'ereditarietà permette di gestire facilmente permessi complessi e di mantenere la sicurezza secondo il principio del minimo privilegio.
