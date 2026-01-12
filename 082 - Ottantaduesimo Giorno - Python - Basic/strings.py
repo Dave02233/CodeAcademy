@@ -39,3 +39,10 @@ fixed_first_name = "R" + first_name[1:]
 
 
 password = "theycallme\"crazy\"91"
+
+
+letter_check = lambda x, y:x.count(y) > 0
+
+contains = lambda x, y:y in x
+common_letters = lambda x, y:list(dict.fromkeys([l for l in x if l in y]))
+print(common_letters("banana", "cream"))
