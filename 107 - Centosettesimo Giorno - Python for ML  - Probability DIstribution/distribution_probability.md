@@ -156,11 +156,31 @@ stats.norm.cdf(120, 150, 20)
 
 **Solo per variabili continue**
 
-**Caratteristica chiave**: `P(X = x) = 0` per qualsiasi punto singolo
+**Cosa è**: funzione di densità f(x) tale che la probabilità su un intervallo [a,b] è
+`P(a ≤ X ≤ b) = ∫_a^b f(x) dx`.
 
-**Perché?**: Area sotto un punto ha larghezza zero
+**Caratteristiche**:
+- `f(x) ≥ 0` per ogni x
+- `∫_{-∞}^{∞} f(x) dx = 1`
+- `P(X = x) = 0` per qualsiasi punto singolo (la probabilità è area, non valore)
+- Il valore di `f(x)` è una densità (misura la "concentrazione" di probabilità attorno a x), non una probabilità assoluta
 
-**Come calcolare probabilità**: Usa CDF per calcolare area tra due punti
+**Quando usare**:
+- Quando la variabile è continua e vuoi probabilità su intervalli.
+- Usa la PDF per confronti di densità; usa la CDF per ottenere probabilità effettive.
+
+**Come usarla (scipy)**:
+- Densità in un punto: `stats.norm.pdf(x, μ, σ)` (valore di densità)
+- Probabilità su intervallo: `stats.norm.cdf(b, μ, σ) - stats.norm.cdf(a, μ, σ)`
+
+**Esempio**:
+```python
+# Densità a 170cm (Normal(167.64, 8))
+stats.norm.pdf(170, 167.64, 8)
+
+# Probabilità tra 160 e 170cm
+stats.norm.cdf(170, 167.64, 8) - stats.norm.cdf(160, 167.64, 8)
+```
 
 ---
 
