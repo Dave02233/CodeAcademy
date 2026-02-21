@@ -28,5 +28,4 @@ Linear algebra is fundamental for data science and has many real-world applicati
 - Computer graphics and video games
 - Machine learning and deep learning foundations
 
-Happy coding!
 
