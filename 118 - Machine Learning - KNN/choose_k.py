@@ -31,12 +31,13 @@ def classify(unknown, dataset, labels, k):
   else:
     return 0
   
-print(validation_set["Bee Movie"])
-print(validation_labels["Bee Movie"])
+def find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, k):
+  num_correct = 0.0
+  for title in validation_set:
+    guess = classify(validation_set[title], training_set, training_labels, k)
+    if guess == validation_labels[title]:
+      num_correct += 1
+  return num_correct / len(validation_set)
 
-guess=classify(validation_set["Bee Movie"], training_set, training_labels, 5)
-print(guess)
-if guess == validation_labels["Bee Movie"]:
-  print("Correct!")
-else:
-  print("Wrong!")
+
+print(find_validation_accuracy(training_set, training_labels, validation_set, validation_labels, 3))
