@@ -51,3 +51,4 @@ Immagina di voler predire se uno studente prenderà un **A**:
 ## Obiettivo
 
 La fase di “apprendimento” consiste nel trovare **la sequenza di split ottimale** — ovvero le feature e i punti di taglio — che permettano di classificare i dati nel modo più accurato e generalizzabile possibile.
+
