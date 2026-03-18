@@ -7,3 +7,6 @@ scipy
 xgboost
 optuna
 kagglehub
+yfinance
+lightgbm
+shap
