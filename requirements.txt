@@ -12,4 +12,4 @@ lightgbm
 shap
 torch 
 torchvision
---index-url https://download.pytorch.org/whl/cu130
+#--index-url https://download.pytorch.org/whl/cu130
