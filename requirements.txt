@@ -9,7 +9,7 @@ optuna
 kagglehub
 yfinance
 lightgbm
-shap
-torch 
-torchvision
+#shap
+#torch 
+#torchvision
 #--index-url https://download.pytorch.org/whl/cu130
